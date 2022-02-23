@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         closePort,
         sendCmdWaitRsp,
         sendCmd,
-    } = cmdRspHandler({
+    } = cmdRspHandler(webSerialIo(), {
         parseByLine:true,
         isRsp:(strMsg, strLastCmd)=>{
             const cmds = strLastCmd.split(" ");
@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         requestPortOption:{filters: [
             {usbVendorId:0x2341, usbProductId:0x8054}, // Arduino MKR WIFI1010
             {usbVendorId:0x0483, usbProductId:0x374B}, // ST-Link
+            {usbVendorId:0x0403, usbProductId:0x6001}, // Pmod USBUART
         ]},
     });
 

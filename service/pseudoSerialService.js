@@ -87,10 +87,10 @@ const pseudoSerialService = (()=>{
                                     evts[id].currentCount += 1;
                                     // console.log(evts[id])
                                     if (0 === evts[id].maxCount){
-                                        setTxStr("| TEST EVT " + id.toString(10) + "," + evts[id].currentCount.toString(10))
+                                        setTxStr("| TEST EVT " + id.toString(10) + "," + evts[id].currentCount.toString(10) + "," + maxCount)
                                     } else {
                                         if (evts[id].currentCount < evts[id].maxCount) {                                
-                                            setTxStr("| TEST EVT " + id.toString(10) + "," + evts[id].currentCount.toString(10))
+                                            setTxStr("| TEST EVT " + id.toString(10) + "," + evts[id].currentCount.toString(10) + "," + maxCount)
                                         } else {
                                             // console.log("Terminate")
                                             clearInterval(evts[id].timerId)
